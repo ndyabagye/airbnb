@@ -1,8 +1,8 @@
-import {Nunito} from 'next/font/google';
+import { Nunito } from 'next/font/google';
 import './globals.css'
 import Navbar from "@/app/components/navbar/Navbar";
 import ClientOnly from "@/app/components/ClientOnly";
-import Modal from "@/app/components/Modals/Modal";
+import RegisterModal from '@/app/components/Modals/RegisterModal';
 
 export const metadata = {
     title: 'AirBnb',
@@ -14,20 +14,21 @@ const font = Nunito({
 })
 
 export default function RootLayout({
-                                       children,
-                                   }: {
+    children,
+}: {
     children: React.ReactNode
 }) {
     // @ts-ignore
     return (
         <html lang="en">
-        <body className={font.className}>
-        <ClientOnly>
-            <Modal actionLabel="Submit" isOpen />
-            <Navbar/>
-        </ClientOnly>
+            <body className={font.className}>
+                <ClientOnly>
+                    <RegisterModal/>
+                    {/* <Modal actionLabel="Submit" isOpen /> */}
+                    <Navbar />
+                </ClientOnly>
 
-        {children}</body>
+                {children}</body>
         </html>
     )
 }
