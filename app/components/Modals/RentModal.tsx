@@ -162,6 +162,10 @@ const RentModal = () => {
         )
     }
 
+    if(step === STEPS.PRICE){
+
+    }
+
 
     return (
         <Modal
